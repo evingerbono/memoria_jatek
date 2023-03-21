@@ -4,6 +4,12 @@ let db = 0;
 const KIVALASZTOTTKEPEK = []
 
 $(function () {
+    for (let i = 0; i < LIST.length; i++) {
+        const r = Math.floor(Math.random() * LIST.length);
+        const h = LIST[i];
+        LIST[i] = LIST[r];
+        LIST[r] = h;
+    }
     const FESLO = $('#felso');
     let tartalom = osszeAllit();
     FESLO.append(tartalom);
